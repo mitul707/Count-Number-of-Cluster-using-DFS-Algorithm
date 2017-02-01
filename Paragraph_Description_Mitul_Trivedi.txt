@@ -1,0 +1,35 @@
+I have created one program to understand 'DFS Algorithm' by traversing the nodes with recursion.
+The program finds the total number of components from the given string array.
+
+For example given string array can be as below,
+	 0123
+	 ||||
+0---->	"1100",
+1---->	"1110",
+2---->	"0110",
+3---->	"0001"
+
+1 -> There's an adjacency node
+0 -> There's no adjacency.
+
+0, 1, 2, 3 are the numbers indicating the Nodes.
+
+So, above string array will give me an adjacency list for the nodes as below.
+
+0--> 0,1	[For Example: Node 0 is connected with Node 0 and Node 1]
+1--> 0,1,2
+2--> 1,2
+3--> 3		[For Example: Node 3 is only connected with Node 3 itself]
+
+Now, I will traverse from 0 to number of nodes with DFS to see how many nodes I will reach from 0.
+That means 0, 1 and 2 will find in the same cluster. While Node 3 is not connected to any of the other nodes.
+
+So the output for above mentioned problem will be as below:
+Number of Connected Components: 2
+
+*********************************************************************************************************************************
+
+Understanding of the doDFS function in my program:
+1) I have already created adjacency List from the given array of string.
+2) doDFS function basically mark the current node as visited.
+3) Then with that current node I will traverse all the adjacency node and call doDFS recursively.
